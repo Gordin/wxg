@@ -10,6 +10,7 @@
 	<property name="conf" location="conf" />
 	<property name="doc" location="javadoc" />
 	<property name="tmp" location="temp" />
+	<property name="dist" location="dist" />
 	<property name="tmp.classes" location="${tmp}/classes" />
 	
 	<path id="classpath">
@@ -36,7 +37,8 @@
 		<manifestclasspath property="jar.classpath" jarfile="wxg.jar">
 			<classpath refid="classpath"/>
 		</manifestclasspath> 
-		<jar jarfile="wxg.jar">
+		<mkdir dir="${dist}" />
+		<jar jarfile="${dist}/wxg.jar">
 			<manifest>
 				<attribute name="Main-Class" value="de.rwth_aachen.dbis.wsxmppgateway.WebSocketXmppGateway" />
 				<attribute name="Class-Path" value="${jar.classpath}" />
@@ -64,4 +66,9 @@
 			</bottom>
 		</javadoc>
 	</target>
+	<target name="clean" description="clean up" >
+	    <!-- Delete the ${tmp} and ${dist} directory trees -->
+	    <delete includeemptydirs="true" dir="${tmp}"/>
+	    <delete includeemptydirs="true" dir="${dist}"/>
+    </target>
 </project>
