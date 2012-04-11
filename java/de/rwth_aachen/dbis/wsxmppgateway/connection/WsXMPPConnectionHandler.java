@@ -469,7 +469,7 @@ public class WsXMPPConnectionHandler implements WebSocket, WebSocket.OnFrame, We
 					xml += " ";
 				}
 			}
-			xml +=">";
+			xml +="/>";
 			sendMessage(xml);
 			openingTagSent = true;
 		}
