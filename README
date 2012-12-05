@@ -37,7 +37,7 @@ Perform the following steps to build WXG:
 
 1) check out a copy of the git repository from github
 
-	git clone git@github.com:hocken/wxg
+	git clone git@github.com:gordin/wxg
 
 2) change to the root directory of the WXG working copy
 
